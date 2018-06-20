@@ -1,11 +1,10 @@
 package com.cogitator.mvpvsmvvm_android.presentation
 
-import android.support.v7.app.AppCompatActivity
 import android.content.Intent
+import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.cogitator.mvpvsmvvm_android.R
-import android.os.Bundle
-import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
 
 

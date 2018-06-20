@@ -9,7 +9,7 @@ import com.cogitator.common.models.User
 interface IUserModule {
     fun getTestCredential(): Credential
 
-    fun setUser(_user: User)
+    fun setUser(_user: User?)
 
-    fun getUser(): User
+    fun getUser(): User?
 }

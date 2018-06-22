@@ -7,7 +7,7 @@ import com.cogitator.common.modules.IUserModule
 /**
  * @author Ankit Kumar (ankitdroiddeveloper@gmail.com) on 20/06/2018 (MM/DD/YYYY)
  */
-final class UserModuleImpl: IUserModule {
+class UserModuleImpl : IUserModule {
     private var user: User? = null
     override fun getTestCredential(): Credential {
         return Credential("test-user@test-mail.com", "testpass")

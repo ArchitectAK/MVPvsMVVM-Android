@@ -30,5 +30,5 @@ interface IAuthModule {
         fun onAuthState(isAuthorized: Boolean)
     }
 
-    fun getUser(): User
+    fun getUser(): User?
 }

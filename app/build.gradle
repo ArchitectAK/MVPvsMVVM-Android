@@ -8,17 +8,32 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
         applicationId "com.cogitator.mvpvsmvvm_android"
-        minSdkVersion 19
+
+        minSdkVersion 21
         targetSdkVersion rootProject.ext.compileSdkVersion
+
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        testFunctionalTest false
+        testHandleProfiling false
+        testInstrumentationRunner "android.app.Instrumentation"
+
+        jackOptions {
+            enabled false
+            jackInProcess false
+        }
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    compileOptions {
+        incremental true
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     dataBinding {
         enabled true
@@ -36,22 +51,21 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${rootProject.ext.kotlin_version}"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${rootProject.ext.kotlin_version}"
     implementation "com.android.support:appcompat-v7:${rootProject.ext.support_version}"
     implementation "com.android.support:support-media-compat:${rootProject.ext.support_version}"
     implementation "com.android.support:support-v4:${rootProject.ext.support_version}"
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
-    implementation project(':mvp-app')
-    implementation project(':mvvm-app')
 
 
     implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation 'com.google.firebase:firebase-auth:16.0.2'
     implementation 'com.google.firebase:firebase-database:16.0.1'
 
-    implementation project(path: ':common')
+//    api project(path: ':common')
+    implementation project(':mvp-app')
+    implementation project(':mvvm-app')
+    implementation project(path: ':mvp-app')
+    implementation project(path: ':mvvm-app')
 }
 apply plugin: 'com.google.gms.google-services'

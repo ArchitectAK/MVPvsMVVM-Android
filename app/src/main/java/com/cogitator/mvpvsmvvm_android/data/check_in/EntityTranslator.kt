@@ -10,6 +10,8 @@ import java.util.Map
  */
 class EntityTranslator {
 
+    //JP
+
 
     @Exclude
     fun toMap(checkIn: CheckIn): Map<String, Any> {
